@@ -1,19 +1,17 @@
-import { ExampleComponent } from './example/example.component';
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
+import { EditClientComponent } from "./clients/edit/edit-client.component";
 import { PagesComponent } from "./pages.component";
 
 const routes: Routes = [
 	{
-		path: '',
+		path: 'clients',
 		component: PagesComponent,
-        children: [
-			{
-				path: 'example',
-				component: ExampleComponent,
-			},
-        ],
 	},
+	{
+		path: 'clients/edit',
+		component: EditClientComponent,
+	}
 ];
 
 @NgModule({

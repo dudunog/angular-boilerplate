@@ -1,0 +1,57 @@
+<h1 class="title">Edit client</h1>
+
+<div class="containerAddClient">
+  <form [formGroup]="form">
+    <div class="field">
+      <label class="required">Name</label>
+      <input
+        type="text"
+        placeholder="Eduardo Nogueira"
+        minlength="3"
+        maxlength="100"
+        formControlName="name"
+      >
+
+      <small class="danger" *ngIf="form.controls.name.invalid && !form.controls.name.pristine">
+        Este campo deve conter entre 4 e 100 caracteres<br>
+      </small>
+    </div>
+  
+    <div class="fields">
+      <input type="text" formControlName="id" hidden>
+      
+      <div class="field">
+        <label class="required">E-mail</label>
+        <input type="text" placeholder="eduardo@gmail.com" formControlName="email">
+        <small class="danger" *ngIf="form.controls.email.invalid && !form.controls.email.pristine">
+          Este campo é obrigatório<br>
+        </small>
+      </div>
+    
+      <div class="field">
+        <label class="required">Phone number</label>
+        <input type="text" placeholder="(88) 98888-8888" mask="(00) 0000-0000" formControlName="phoneNumber">
+        <small class="danger" *ngIf="form.controls.phoneNumber.invalid && !form.controls.phoneNumber.pristine">
+          Este campo deve ser do seguinte formato: (88)999999999<br>
+        </small>
+      </div>
+  
+      <div class="field">
+        <label class="required">Status</label>
+        <select name="status" id="status" formControlName="status">
+          <option value="">Selecione</option>
+          <option *ngFor="let status of status" [value]="status">{{ status }}</option>
+        </select>
+        <small class="danger" *ngIf="form.controls.status.invalid && !form.controls.status.pristine">
+          Este campo é obrigatório<br>
+        </small>
+      </div>
+    </div>
+
+    <p class="text-center">
+      <button class="submitButton" [disabled]="form.invalid" (click)="editPost()">
+        Salvar
+      </button>
+    </p>
+  </form>
+</div>

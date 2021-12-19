@@ -1,0 +1,64 @@
+.title {
+  margin-top: 8rem;
+}
+
+.container {
+  padding: 0 30px;
+
+  table {
+    padding: 1rem 2rem;
+    border: 1px dashed #e8e5dd;
+    border-radius: 0.95rem;
+
+    thead {
+      tr {
+        th {
+          color: #b5b0a1;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        td {
+          padding: 1.25rem 1rem;
+          text-align: center;
+        }
+
+        .actions {
+          display: flex;
+          justify-content: center;
+          gap: 0.5rem;
+
+          .remove, .edit {
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+
+            color: #4fc9da;
+            background-color: #ddf8fc;
+            border: 0;
+            border-radius: .475rem;
+
+            transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+          }
+      
+          .remove:hover, .edit:hover {
+            color: #fff;
+            background-color: #4fc9da;
+          }
+        }
+
+        :not(td:nth-child(1)) {
+          color: #8e887a;
+        }
+      }
+    }
+
+    th, td {
+      padding: .75rem 4rem;
+      border-bottom-width: 1px;
+      border-bottom-style: dashed;
+      border-bottom-color: #f6f1e9;
+    }
+  }
+}

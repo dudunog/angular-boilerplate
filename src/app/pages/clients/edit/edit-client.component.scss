@@ -1,0 +1,79 @@
+.title {
+  margin-top: 4rem;
+}
+
+.containerAddClient {
+  padding: 1rem 2rem;
+  border: 1px dashed #e8e5dd;
+  border-radius: 0.95rem;
+  
+  form {
+    .submitButton {
+      font-size: 1rem;
+      font-weight: 600;
+      border: 0;
+      background-color: #f8f6f2;
+      border-radius: 0.95rem;
+      padding: 0.75rem 1.1rem;
+      transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+    
+    .submitButton:not(:disabled) {
+      color: #fff;
+      background-color: #4fc9da;
+      cursor: pointer;
+    }
+
+    .submitButton:hover {
+      background-color: #30a6b6;
+    }
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    margin-bottom: 1.75rem;
+
+    label {
+      margin-bottom: 0.5rem;
+    }
+
+    .required::after {
+      content: "*";
+      position: relative;
+      font-size: inherit;
+      color: #f06445;
+      padding-left: 0.25rem;
+      font-weight: 700;
+    }
+
+    input, select {
+      padding: 0.75rem 1rem;
+      max-width: 100%;
+
+      background-color: #f8f6f2;
+      border: 1px solid #efe9e1;
+      border-radius: 0.95rem;
+      border-color: #f8f6f2;
+      color: #716d66;
+      transition: color .2s ease,background-color .2s ease;
+    }
+  }
+
+  .fields {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+
+    .field {
+      width: 100%;
+    }
+  }
+}
+
+.danger {
+  margin-top: 0.5rem;
+  font-size: .825rem;
+  color: #f06445;
+}
